@@ -84,4 +84,17 @@ RSpec.configure do |config|
     end
   end
 
+  RSpec.configure do |config|
+    config.include ApiHelper
+  end
+
+end
+
+module ApiHelper
+  require 'rack/test'
+  include Rack::Test::Methods
+
+  def app
+    Rails.application
+  end
 end
