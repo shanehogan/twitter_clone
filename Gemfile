@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 gem 'bson'
 gem 'bson_ext'
 gem 'mongo_mapper'
+gem 'service_manager'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
