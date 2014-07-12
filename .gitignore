@@ -17,5 +17,5 @@
 .keep
 Gemfile.lock
 *.iml
-.idea
+.idea/*
 mongod.pid
