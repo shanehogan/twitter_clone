@@ -1,1 +1,1 @@
-MongoMapper.database = "twitter-clone-db-#{Rails.env}"
+MongoMapper.database = "twitterclone_#{Rails.env}"

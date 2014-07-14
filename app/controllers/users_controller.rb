@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def create
-    render json: [{email: params[:email]}]
+    user = User.new({email: params[:email]})
+    render json: user
   end
 end

@@ -3,8 +3,8 @@ Feature: Register a new user
   As a client of the api we need to be able to register a new user.
 
   Scenario: Register a user
-    When the client requests POST shane@example.com to /users
+    When the client send a POST to "/users" with an email address of "shane@example.com"
     Then the response should be JSON:
     """
-    [{"email": "shane@example.com"}]
+    {"id": "someMongoDBAssignedHexValue", "email": "shane@example.com"}
     """

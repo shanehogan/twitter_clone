@@ -14,6 +14,16 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+module ApiHelper
+  require 'rack/test'
+  include Rack::Test::Methods
+
+  def app
+    Rails.application
+  end
+end
+
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
@@ -76,25 +86,14 @@ RSpec.configure do |config|
   end
 =end
 
-  config.after(:each) do
-    MongoMapper.database.collections.each do |collection|
-      unless collection.name.match(/^system\./)
-        collection.remove
-      end
-    end
-  end
+  # config.after(:each) do
+  #   MongoMapper.database.collections.each do |collection|
+  #     unless collection.name.match(/^system\./)
+  #       collection.remove
+  #     end
+  #   end
+  # end
 
-  RSpec.configure do |config|
-    config.include ApiHelper
-  end
+  config.include ApiHelper
 
-end
-
-module ApiHelper
-  require 'rack/test'
-  include Rack::Test::Methods
-
-  def app
-    Rails.application
-  end
 end
