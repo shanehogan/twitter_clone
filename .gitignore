@@ -14,8 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-/.idea
-
+.keep
 Gemfile.lock
-*.keep
+*.iml
+.idea
+mongod.pid
+>>>>>>> wip/mongoDB
